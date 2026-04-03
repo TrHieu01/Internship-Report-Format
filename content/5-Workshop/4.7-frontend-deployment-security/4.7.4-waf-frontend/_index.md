@@ -1,9 +1,9 @@
 ---
 title : "WAF Frontend"
 date : 2024-01-01
-weight : 11
+weight : 4
 chapter : false
-pre : " <b> 4.11. </b> "
+pre : " <b> 4.7.4 </b> "
 ---
 
 #### Enable WAFv2

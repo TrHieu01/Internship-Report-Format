@@ -1,9 +1,9 @@
 ---
 title : "System Checks"
 date : 2024-01-01
-weight : 13
+weight : 2
 chapter : false
-pre : " <b> 4.13. </b> "
+pre : " <b> 4.8.2 </b> "
 ---
 
 #### Health check commands

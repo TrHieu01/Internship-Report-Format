@@ -1,9 +1,9 @@
 ---
 title : "Backend Env Variables"
 date : 2024-01-01
-weight : 6
+weight : 2
 chapter : false
-pre : " <b> 4.6. </b> "
+pre : " <b> 4.4.2 </b> "
 ---
 
 #### .env.example
