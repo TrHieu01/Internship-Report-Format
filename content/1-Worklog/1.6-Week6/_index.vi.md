@@ -1,7 +1,7 @@
 ---
 title: "Worklog Tuần 6"
-date: 2024-01-01
-weight: 1
+date: 2025-02-05
+weight: 6
 chapter: false
 pre: " <b> 1.6. </b> "
 ---
@@ -9,50 +9,24 @@ pre: " <b> 1.6. </b> "
 ⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
 {{% /notice %}}
 
-
 ### Mục tiêu tuần 6:
-
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Xây dựng giao diện Dashboard (Next.js & Shadcn/ui) cho Giáo viên.
+* Tối ưu hóa trải nghiệm người dùng đa thiết bị (Responsive Design).
+* Thiết lập chính sách bảo mật IAM chi tiết cho tài nguyên AWS S3 và RDS.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
+| Thứ | Ngày | Công việc | Kết quả |
+| --- | --- | --- | --- |
+| 2 | 09/02 | Setup môi trường Next.js, cài bộ Shadcn/ui và thiết kế khung sườn. | Hoàn thành |
+| 3 | 10/02 | Code Dashboard giáo viên (quản lý lớp, đăng tài liệu). | Hoàn thành |
+| 4 | 11/02 | Tích hợp Responsive Design cho Mobile và Tablet. | Hoàn thành |
+| 5 | 12/02 | Nghiên cứu AWS IAM Policy quản lý chi tiết S3/RDS. | Hoàn thành |
+| 6 | 13/02 | Hoàn thiện giao diện cài đặt hồ sơ người dùng. | Hoàn thành |
+| 7 | 14/02 | Kiểm tra UI/UX đa trình duyệt và sửa lỗi CSS. | Hoàn thành |
+| CN | 15/02 | Commit code lên Git và dọn dẹp trước kỳ nghỉ Tết. | Hoàn thành |
 
 ### Kết quả đạt được tuần 6:
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Hoàn thiện khung giao diện chính của hệ thống quản lý học tập EduTrust.
+* Tính năng quản lý lớp học của giáo viên đã bắt đầu hoạt động trên giao diện.
+* Hệ thống hiển thị tốt trên tất cả kích thước màn hình phổ biến.
+* Chính sách bảo mật (IAM) được phân quyền chặt chẽ hơn.

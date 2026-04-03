@@ -1,7 +1,7 @@
 ---
 title: "Worklog Tuần 5"
-date: 2024-01-01
-weight: 1
+date: 2025-01-29
+weight: 5
 chapter: false
 pre: " <b> 1.5. </b> "
 ---
@@ -9,51 +9,24 @@ pre: " <b> 1.5. </b> "
 ⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
 {{% /notice %}}
 
-
 ### Mục tiêu tuần 5:
-
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Nghiên cứu tính khả thi của hệ thống giám sát Camera AI và Chatbot thông minh.
+* Đề xuất kiến trúc AI Agentic Workflow để xử lý các tác vụ phức tạp.
+* Thực hiện Unit Test cho các tính năng cốt lõi đã phát triển.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
+| Thứ | Ngày | Công việc | Kết quả |
+| --- | --- | --- | --- |
+| 2 | 02/02 | Họp Team lần 2: Đánh giá tính khả thi Camera AI và Chatbot. | Hoàn thành |
+| 3 | 03/02 | Đề xuất phương án chia nhỏ AI Agent (Agentic Workflow). | Hoàn thành |
+| 4 | 04/02 | Nghiên cứu Video Stream cho tính năng camera giám sát thi. | Hoàn thành |
+| 5 | 05/02 | Viết Unit Test cho logic Auth và nộp bài trực tuyến. | Hoàn thành |
+| 6 | 06/02 | Tìm hiểu Amazon DynamoDB cho lịch sử trò chuyện Chatbot. | Hoàn thành |
+| 7 | 07/02 | Tối ưu hóa truy vấn Database tăng tốc phản hồi AI. | Hoàn thành |
+| CN | 08/02 | Kiểm tra hệ thống và chuẩn bị cho tuần tiếp theo. | Hoàn thành |
 
 ### Kết quả đạt được tuần 5:
-
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Xác định được mô hình AI Agent phù hợp cho hệ thống EduTrust.
+* Hiểu rõ cơ chế truyền phát video thực tế trên trình duyệt cho tính năng giám sát.
+* Hệ thống ổn định hơn nhờ các bản Unit Test được bổ sung.
+* Cấu hình bước đầu cho việc lưu trữ dữ liệu phi cấu trúc trên DynamoDB.

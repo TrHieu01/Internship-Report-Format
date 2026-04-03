@@ -1,7 +1,7 @@
 ---
 title: "Worklog Tuần 4"
-date: 2024-01-01
-weight: 1
+date: 2025-01-22
+weight: 4
 chapter: false
 pre: " <b> 1.4. </b> "
 ---
@@ -9,51 +9,24 @@ pre: " <b> 1.4. </b> "
 ⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
 {{% /notice %}}
 
-
 ### Mục tiêu tuần 4:
-
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Xây dựng hệ thống xác thực người dùng (Authentication & Authorization).
+* Khởi tạo và kết nối cơ sở dữ liệu AWS RDS với dự án thực tế.
+* Thiết lập các API cơ bản và kiểm thử bảo mật.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
+| Thứ | Ngày | Công việc | Kết quả |
+| --- | --- | --- | --- |
+| 2 | 26/01 | Xây dựng hệ thống Đăng ký/Đăng nhập sử dụng công nghệ JWT. | Hoàn thành |
+| 3 | 27/01 | Khởi tạo AWS RDS và kết nối với dự án Next.js qua Prisma. | Hoàn thành |
+| 4 | 28/01 | Lập trình API lấy danh sách bài học và thông tin người dùng. | Hoàn thành |
+| 5 | 29/01 | Viết Middleware trong Next.js để phân quyền Admin/User. | Hoàn thành |
+| 6 | 30/01 | Kiểm thử bảo mật API, ngăn chặn SQL Injection và lỗi Sanitize input. | Hoàn thành |
+| 7 | 31/01 | Tổng kết tháng đầu tiên, đánh giá tiến bộ so với kế hoạch. | Hoàn thành |
+| CN | 01/02 | Lên kế hoạch chi tiết cho giai đoạn phát triển UI sau Tết. | Hoàn thành |
 
 ### Kết quả đạt được tuần 4:
-
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Hệ thống xác thực JWT hoạt động ổn định và an toàn.
+* Cơ sở dữ liệu đám mây (RDS) đã sẵn sàng phục vụ các tính năng của EduTrust.
+* Các API cốt lõi được bảo mật tốt thông qua Middleware và kỹ thuật kiểm tra đầu vào.
+* Kết thúc tháng đầu tiên với tiến độ đạt 100% mục tiêu đề ra.
