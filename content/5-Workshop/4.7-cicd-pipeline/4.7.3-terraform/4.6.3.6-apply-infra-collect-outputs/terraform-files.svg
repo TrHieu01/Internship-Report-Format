@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="220" viewBox="0 0 720 220">
+  <defs>
+    <style>
+      .bg { fill: #0b0f17; }
+      .text { font: 16px "Consolas", "Courier New", monospace; fill: #e5e7eb; }
+      .muted { fill: #9ca3af; }
+      .icon { fill: #7c3aed; }
+      .folder { fill: #3b82f6; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="720" height="220" rx="12" ry="12"/>
+
+  <!-- Folder line -->
+  <rect class="folder" x="24" y="24" width="12" height="12" rx="2" ry="2"/>
+  <text class="text" x="48" y="36">terraform</text>
+
+  <!-- Files -->
+  <rect class="icon" x="48" y="64" width="10" height="10" rx="2" ry="2"/>
+  <text class="text" x="72" y="74">main.tf</text>
+
+  <rect class="icon" x="48" y="92" width="10" height="10" rx="2" ry="2"/>
+  <text class="text" x="72" y="102">outputs.tf</text>
+
+  <rect class="icon" x="48" y="120" width="10" height="10" rx="2" ry="2"/>
+  <text class="text" x="72" y="130">terraform.tfvars.example</text>
+
+  <rect class="icon" x="48" y="148" width="10" height="10" rx="2" ry="2"/>
+  <text class="text" x="72" y="158">variables.tf</text>
+
+  <text class="text muted" x="24" y="196">Các file cấu hình Terraform (.tf) trong thư mục làm việc</text>
+</svg>

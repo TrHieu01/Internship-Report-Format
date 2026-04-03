@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="180" viewBox="0 0 1200 180">
+  <defs>
+    <style>
+      .box { fill: #0f172a; stroke: #1f2937; stroke-width: 2; rx: 12; ry: 12; }
+      .text { font: 600 16px "Consolas", "Courier New", monospace; fill: #e5e7eb; }
+      .label { font: 600 16px "Segoe UI", Arial, sans-serif; fill: #374151; }
+    </style>
+  </defs>
+
+  <text class="label" x="40" y="35">Điều kiện chạy (if):</text>
+
+  <rect class="box" x="40" y="55" width="1120" height="90"/>
+  <text class="text" x="70" y="105">
+    if: always() &amp;&amp; (needs.packer.result == 'success' || needs.packer.result == 'skipped')
+    &amp;&amp; (github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success')
+  </text>
+</svg>

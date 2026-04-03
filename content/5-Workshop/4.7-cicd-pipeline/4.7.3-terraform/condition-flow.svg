@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="340" viewBox="0 0 1200 340">
+  <defs>
+    <style>
+      .box { fill: #f4f6f9; stroke: #2f3b52; stroke-width: 2; rx: 14; ry: 14; }
+      .title { font: 600 18px "Segoe UI", Arial, sans-serif; fill: #1f2937; }
+      .text { font: 16px "Segoe UI", Arial, sans-serif; fill: #374151; }
+      .arrow { stroke: #2f3b52; stroke-width: 2.5; fill: none; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2f3b52"/>
+    </marker>
+  </defs>
+
+  <rect class="box" x="40" y="60" width="320" height="110"/>
+  <text class="title" x="70" y="95">Trigger</text>
+  <text class="text" x="70" y="125">workflow_dispatch</text>
+  <text class="text" x="70" y="150">hoặc workflow_run success</text>
+
+  <rect class="box" x="440" y="60" width="320" height="110"/>
+  <text class="title" x="470" y="95">Điều kiện phụ thuộc</text>
+  <text class="text" x="470" y="125">needs.packer = success</text>
+  <text class="text" x="470" y="150">hoặc skipped</text>
+
+  <rect class="box" x="840" y="60" width="320" height="110"/>
+  <text class="title" x="870" y="95">Job Terraform</text>
+  <text class="text" x="870" y="125">Provision/Update EC2</text>
+
+  <line class="arrow" x1="360" y1="115" x2="440" y2="115"/>
+  <line class="arrow" x1="760" y1="115" x2="840" y2="115"/>
+
+  <rect class="box" x="240" y="210" width="720" height="90"/>
+  <text class="title" x="270" y="245">Kết quả</text>
+  <text class="text" x="270" y="270">Khi hai điều kiện thoả, job Terraform được thực thi</text>
+</svg>
