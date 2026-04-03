@@ -1,5 +1,5 @@
 ---
-title: "Worklog Tuần 6"
+title: "Tuần 6: Phát triển Dashboard"
 date: 2025-02-05
 weight: 6
 chapter: false
@@ -10,23 +10,23 @@ pre: " <b> 1.6. </b> "
 {{% /notice %}}
 
 ### Mục tiêu tuần 6:
-* Xây dựng giao diện Dashboard (Next.js & Shadcn/ui) cho Giáo viên.
-* Tối ưu hóa trải nghiệm người dùng đa thiết bị (Responsive Design).
-* Thiết lập chính sách bảo mật IAM chi tiết cho tài nguyên AWS S3 và RDS.
+* Xây dựng giao diện Dashboard cho Admin và Teacher.
+* Tích hợp Tailwind CSS v4 để thiết kế giao diện hiện đại, tối giản.
+* Đảm bảo tính phản hồi (Responsive) trên nhiều thiết bị.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Ngày | Công việc | Kết quả |
-| --- | --- | --- | --- |
-| 2 | 09/02 | Setup môi trường Next.js, cài bộ Shadcn/ui và thiết kế khung sườn. | Hoàn thành |
-| 3 | 10/02 | Code Dashboard giáo viên (quản lý lớp, đăng tài liệu). | Hoàn thành |
-| 4 | 11/02 | Tích hợp Responsive Design cho Mobile và Tablet. | Hoàn thành |
-| 5 | 12/02 | Nghiên cứu AWS IAM Policy quản lý chi tiết S3/RDS. | Hoàn thành |
-| 6 | 13/02 | Hoàn thiện giao diện cài đặt hồ sơ người dùng. | Hoàn thành |
-| 7 | 14/02 | Kiểm tra UI/UX đa trình duyệt và sửa lỗi CSS. | Hoàn thành |
-| CN | 15/02 | Commit code lên Git và dọn dẹp trước kỳ nghỉ Tết. | Hoàn thành |
+| Thứ | Ngày | Công việc |
+| --- | --- | --- |
+| 2 | 09/02 | Khởi tạo dự án Next.js 16, cấu hình App Router và Lucide Icons. |
+| 3 | 10/02 | Thiết kế bố cục Layout chung (Sidebar, Navbar, Breadcrumbs). |
+| 4 | 11/02 | Xây dựng màn hình quản lý lớp học và danh sách sinh viên. |
+| 5 | 12/02 | Phát triển form tạo đề thi với tính năng thêm câu hỏi trắc nghiệm. |
+| 6 | 13/02 | Tích hợp Tailwind CSS v4 cho các thành phần UI (Buttons, Cards, Modals). |
+| 7 | 14/02 | Kiểm tra hiển thị Dashboard trên Mobile và Tablet. |
+| CN | 15/02 | Tối ưu hóa hiệu năng render trang bằng Server Components. |
 
 ### Kết quả đạt được tuần 6:
-* Hoàn thiện khung giao diện chính của hệ thống quản lý học tập EduTrust.
-* Tính năng quản lý lớp học của giáo viên đã bắt đầu hoạt động trên giao diện.
-* Hệ thống hiển thị tốt trên tất cả kích thước màn hình phổ biến.
+* Hoàn thiện khung giao diện Dashboard chuyên nghiệp.
+* Giao diện UI/UX mượt mà, hỗ trợ tốt chế độ sáng/tối (Dark Mode).
+* Các tính năng quản lý cơ bản đã có thể thao tác trực tiếp trên màn hình.
 * Chính sách bảo mật (IAM) được phân quyền chặt chẽ hơn.

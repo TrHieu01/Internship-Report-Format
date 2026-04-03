@@ -1,5 +1,5 @@
 ---
-title: "Week 6 Worklog"
+title: "Week 6: Dashboard Development"
 date: 2025-02-05
 weight: 6
 chapter: false
@@ -10,23 +10,24 @@ pre: " <b> 1.6. </b> "
 {{% /notice %}}
 
 ### Week 6 Objectives:
-* Build the Dashboard interface (Next.js & Shadcn/ui) for Teachers.
-* Optimize user experience across devices (Responsive Design).
-* Establish detailed IAM security policies for AWS S3 and RDS resources.
+* Build Dashboard interfaces for Admin and Teacher roles.
+* Integrate Tailwind CSS v4 for a modern, minimal UI design.
+* Ensure Responsive compatibility across various devices.
 
 ### Tasks to be carried out this week:
-| Day | Date | Task | Status |
-| --- | --- | --- | --- |
-| Mon | 09/02 | Setup Next.js environment, installed Shadcn/ui, and designed the skeleton. | Completed |
-| Tue | 10/02 | Developed Teacher Dashboard (class management, file uploading). | Completed |
-| Wed | 11/02 | Integrated Responsive Design for Mobile and Tablet. | Completed |
-| Thu | 12/02 | Researched AWS IAM Policy for detailed S3/RDS management. | Completed |
-| Fri | 13/02 | Finalized user profile settings interface. | Completed |
-| Sat | 14/02 | Performed cross-browser UI/UX testing and CSS bug fixes. | Completed |
-| Sun | 15/02 | Committed code to Git and cleaned up before Tet holiday. | Completed |
+| Day | Date | Task |
+| --- | --- | --- |
+| Mon | 09/02 | Initialized Next.js 16 project with App Router and Lucide Icons. |
+| Tue | 10/02 | Designed common Layout components (Sidebar, Navbar, Breadcrumbs). |
+| Wed | 11/02 | Built class management and student list dashboard views. |
+| Thu | 12/02 | Developed the exam creation form with multiple-choice question features. |
+| Fri | 13/02 | Integrated Tailwind CSS v4 for core UI components (Buttons, Cards, Modals). |
+| Sat | 14/02 | Verified responsive layouts on Mobile and Tablet devices. |
+| Sun | 15/02 | Optimized page rendering performance using Server Components. |
 
 ### Week 6 Achievements:
-* Completed the main interface framework for the EduTrust learning management system.
-* Teacher class management features are now operational on the UI.
+* Completed a professional Dashboard interface framework.
+* Smooth UI/UX with support for both Light and Dark modes.
+* Core management features are now fully functional on the frontend.
 * System displays correctly across all popular screen sizes.
 * Security policies (IAM) are more tightly permissioned.

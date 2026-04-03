@@ -1,5 +1,5 @@
 ---
-title: "Week 12 Worklog"
+title: "Week 12: Testing & Submission"
 date: 2025-03-19
 weight: 12
 chapter: false
@@ -10,22 +10,23 @@ pre: " <b> 1.12. </b> "
 {{% /notice %}}
 
 ### Week 12 Objectives:
-* Aggregate project results and draft the detailed internship report.
-* Review the entire work process and prepare handover documentation.
-* Present the project results to the team.
+* Perform End-to-End (E2E) testing to ensure overall project quality.
+* Optimize performance and user experience in the AWS environment.
+* Officially submit the project report and conclude the course.
 
 ### Tasks to be carried out this week:
-| Day | Date | Task | Status |
-| --- | --- | --- | --- |
-| Mon | 23/03 | Aggregated achievements and drafted the internship report. | Completed |
-| Tue-Wed | 24-25/03 | Refined technical content within the report. | Completed |
-| Thu | 26/03 | Reviewed the 12-week Worklog for professional consistency. | Completed |
-| Fri | 27/03 | Project wrap-up meeting and results presentation to the Team. | Completed |
-| Sat | 28/03 | Packaged source code and prepared installation guides. | Completed |
-| Sun | 30/03 | Final comprehensive check of the internship report file. | Completed |
+| Day | Date | Task |
+| --- | --- | --- |
+| Mon | 23/03 | Ran E2E Testing on the entire system to detect late-stage bugs. |
+| Tue | 24/03 | Optimized UI and AI Chatbot response speed. |
+| Wed | 25/03 | Verified MongoDB data consistency and optimized Backend performance. |
+| Thu | 26/03 | Conducted final system permission audit and user trial surveys. |
+| Fri | 27/03 | Packaged EduTrust Demo and finalized the submission files. |
+| Sat | 28/03 | Successfully submitted the official project report. |
+| Sun | 29/03 | Final summary and cleaned up unnecessary Cloud resources. |
 
 ### Week 12 Achievements:
-* Completed the internship report draft with full technical evidence.
-* EduTrust project highly rated after the internal presentation.
-* All source code and instructional documentation professionally packaged.
-* Ready for official report submission.
+* System operates smoothly with no critical bugs identified.
+* Completed the project with a fully featured EduTrust product.
+* Submitted the report on time, meeting all academic requirements.
+* Efficiently managed the AWS account and optimized cloud costs.

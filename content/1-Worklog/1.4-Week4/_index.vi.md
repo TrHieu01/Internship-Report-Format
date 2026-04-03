@@ -1,5 +1,5 @@
 ---
-title: "Worklog Tuần 4"
+title: "Tuần 4: Phát triển Backend & Auth"
 date: 2025-01-22
 weight: 4
 chapter: false
@@ -10,23 +10,22 @@ pre: " <b> 1.4. </b> "
 {{% /notice %}}
 
 ### Mục tiêu tuần 4:
-* Xây dựng hệ thống xác thực người dùng (Authentication & Authorization).
-* Khởi tạo và kết nối cơ sở dữ liệu AWS RDS với dự án thực tế.
-* Thiết lập các API cơ bản và kiểm thử bảo mật.
+* Xây dựng nền tảng Backend bằng FastAPI.
+* Triển khai hệ thống xác thực người dùng (Authentication) qua JWT/Cognito.
+* Kết nối và thực hiện các thao tác CRUD cơ bản trên MongoDB Atlas.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Ngày | Công việc | Kết quả |
-| --- | --- | --- | --- |
-| 2 | 26/01 | Xây dựng hệ thống Đăng ký/Đăng nhập sử dụng công nghệ JWT. | Hoàn thành |
-| 3 | 27/01 | Khởi tạo AWS RDS và kết nối với dự án Next.js qua Prisma. | Hoàn thành |
-| 4 | 28/01 | Lập trình API lấy danh sách bài học và thông tin người dùng. | Hoàn thành |
-| 5 | 29/01 | Viết Middleware trong Next.js để phân quyền Admin/User. | Hoàn thành |
-| 6 | 30/01 | Kiểm thử bảo mật API, ngăn chặn SQL Injection và lỗi Sanitize input. | Hoàn thành |
-| 7 | 31/01 | Tổng kết tháng đầu tiên, đánh giá tiến bộ so với kế hoạch. | Hoàn thành |
-| CN | 01/02 | Lên kế hoạch chi tiết cho giai đoạn phát triển UI sau Tết. | Hoàn thành |
+| Thứ | Ngày | Công việc |
+| --- | --- | --- |
+| 2 | 26/01 | Khởi tạo dự án FastAPI, cấu hình cấu trúc thư mục Monorepo. |
+| 3 | 27/01 | Kết nối MongoDB Atlas bằng Motor (async driver) và kiểm tra kết nối. |
+| 4 | 28/01 | Xây dựng logic Register/Login, tích hợp JWT cho phân quyền RBAC. |
+| 5 | 29/01 | Viết API CRUD cho quản lý thông tin lớp học và đề thi. |
+| 6 | 30/01 | Kiểm thử bảo mật API bằng Swagger UI và ReDoc. |
+| 7 | 31/01 | Tối ưu hóa xử lý lỗi (Exception Handlers) trong FastAPI. |
+| CN | 01/02 | Tổng kết tháng đầu tiên và lập kế hoạch nghiên cứu AI. |
 
 ### Kết quả đạt được tuần 4:
-* Hệ thống xác thực JWT hoạt động ổn định và an toàn.
-* Cơ sở dữ liệu đám mây (RDS) đã sẵn sàng phục vụ các tính năng của EduTrust.
-* Các API cốt lõi được bảo mật tốt thông qua Middleware và kỹ thuật kiểm tra đầu vào.
-* Kết thúc tháng đầu tiên với tiến độ đạt 100% mục tiêu đề ra.
+* Hệ thống Backend cơ bản đã hoạt động ổn định với FastAPI.
+* Xác thực người dùng và phân quyền Admin/Teacher/Student đã hoàn tất.
+* Dữ liệu đã được lưu trữ và truy xuất thành công từ MongoDB Cloud.

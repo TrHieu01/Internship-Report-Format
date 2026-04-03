@@ -1,5 +1,5 @@
 ---
-title: "Worklog Tuần 9"
+title: "Tuần 9: Tích hợp RAG & Chatbot AI"
 date: 2025-02-26
 weight: 9
 chapter: false
@@ -10,23 +10,22 @@ pre: " <b> 1.9. </b> "
 {{% /notice %}}
 
 ### Mục tiêu tuần 9:
-* Cung cấp khả năng quản lý và báo cáo dữ liệu học tập linh hoạt.
-* Tích hợp dịch vụ gửi thông báo tự động cho học viên.
-* Tối ưu hóa hiệu năng truy xuất API thông qua Caching.
+* Triển khai cơ chế RAG (Retrieval-Augmented Generation) cho hệ thống AI.
+* Xây dựng giao diện Chatbot thông minh hỗ trợ học tập qua Pydantic AI.
+* Tối ưu hóa độ chính xác của AI dựa trên cơ sở tri thức bài giảng.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Ngày | Công việc | Kết quả |
-| --- | --- | --- | --- |
-| 2 | 02/03 | Xây dựng tính năng quản lý danh sách học viên cho giáo viên. | Hoàn thành |
-| 3 | 03/03 | Lập trình logic xuất báo cáo kết quả học tập ra Excel/CSV. | Hoàn thành |
-| 4 | 04/03 | Tích hợp Amazon SES để gửi email thông báo tự động. | Hoàn thành |
-| 5 | 05/03 | Tối ưu hóa API bằng kỹ thuật Caching để giảm tải Database. | Hoàn thành |
-| 6 | 06/03 | Sửa lỗi định dạng tệp tin và tiếng Việt khi xuất dữ liệu. | Hoàn thành |
-| 7 | 07/03 | Review mã nguồn toàn bộ module quản lý dữ liệu và báo cáo. | Hoàn thành |
-| CN | 08/03 | Kiểm tra tính ổn định dịch vụ email trên môi trường thực tế. | Hoàn thành |
+| Thứ | Ngày | Công việc |
+| --- | --- | --- |
+| 2 | 02/03 | Nghiên cứu quy trình RAG cho trí tuệ nhân tạo dùng Pydantic AI. |
+| 3 | 03/03 | Kết nối dữ liệu S3 vào Vector Database phục vụ truy xuất thông tin. |
+| 4 | 04/03 | Tích hợp hệ thống Multi-agent để Chatbot có tính chuyên môn cao. |
+| 5 | 05/03 | Xây dựng giao diện Chatbot bằng Next.js, hỗ trợ định dạng Markdown. |
+| 6 | 06/03 | Tối ưu hóa Prompt Engineering để nâng cao chất lượng phản hồi. |
+| 7 | 07/03 | Kiểm thử tính năng Chatbot trên cả giao diện Web và Mobile. |
+| CN | 08/03 | Đánh giá hiệu quả Chatbot cùng đội ngũ phát triển AI. |
 
 ### Kết quả đạt được tuần 9:
-* Hệ thống có khả năng xuất dữ liệu báo cáo chuyên nghiệp và chuẩn xác.
-* Tự động hóa quy trình liên lạc với học viên qua Amazon SES.
-* Tốc độ phản hồi của hệ thống tăng đáng kể nhờ vào cơ chế Caching.
-* Nâng cao trải nghiệm người dùng với các tính năng quản lý tập trung.
+* Chatbot đã có khả năng trả lời các câu hỏi dựa trên nội dung bài giảng.
+* Giao diện Chatbot thân thiện, tốc độ phản hồi nhanh nhờ xử lý bất đồng bộ.
+* Quy trình RAG hoạt động ổn định, đảm bảo thông tin chính xác cho AI.

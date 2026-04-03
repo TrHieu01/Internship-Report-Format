@@ -1,5 +1,5 @@
 ---
-title: "Week 4 Worklog"
+title: "Week 4: Backend & Auth"
 date: 2025-01-22
 weight: 4
 chapter: false
@@ -10,23 +10,22 @@ pre: " <b> 1.4. </b> "
 {{% /notice %}}
 
 ### Week 4 Objectives:
-* Build the user authentication system (Authentication & Authorization).
-* Initialize and connect the AWS RDS database with the living project.
-* Establish basic APIs and perform security testing.
+* Build the Backend foundation using FastAPI.
+* Implement user authentication via JWT/Cognito.
+* Connect and perform basic CRUD operations on MongoDB Atlas.
 
 ### Tasks to be carried out this week:
-| Day | Date | Task | Status |
-| --- | --- | --- | --- |
-| Mon | 26/01 | Built Register/Login system using JWT technology. | Completed |
-| Tue | 27/01 | Initialized AWS RDS and connected with Next.js project via Prisma. | Completed |
-| Wed | 28/01 | Programmed APIs for lesson lists and user profile information. | Completed |
-| Thu | 29/01 | Wrote Middleware in Next.js for Admin/User authorization. | Completed |
-| Fri | 30/01 | Performed API security testing, preventing SQL Injection and input sanitization errors. | Completed |
-| Sat | 31/01 | Summarized the first month, evaluated progress against the plan. | Completed |
-| Sun | 01/02 | Detailed planning for the post-Tet UI development phase. | Completed |
+| Day | Date | Task |
+| --- | --- | --- |
+| Mon | 26/01 | Initialized the FastAPI project and configured the Monorepo structure. |
+| Tue | 27/01 | Connected to MongoDB Atlas using the Motor async driver. |
+| Wed | 28/01 | Developed Register/Login logic and integrated JWT for RBAC permissions. |
+| Thu | 29/01 | Coded CRUD APIs for class management and exam creation. |
+| Fri | 30/01 | Security testing of APIs using Swagger UI and ReDoc. |
+| Sat | 31/01 | Optimized exception handling and global response schemas in FastAPI. |
+| Sun | 01/02 | Monthly review and planning for AI feature research. |
 
 ### Week 4 Achievements:
-* JWT authentication system is stable and secure.
-* Cloud database (RDS) is ready for EduTrust features.
-* Core APIs are well-secured through Middleware and input validation techniques.
-* Finished the first month with 100% of the target goals achieved.
+* Core Backend system is stable and operational with FastAPI.
+* User authentication and Admin/Teacher/Student role-based access control are complete.
+* Data is successfully stored and retrieved from the MongoDB Cloud.

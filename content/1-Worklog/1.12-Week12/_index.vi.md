@@ -1,5 +1,5 @@
 ---
-title: "Worklog Tuần 12"
+title: "Tuần 12: Kiểm thử & Nộp bài"
 date: 2025-03-19
 weight: 12
 chapter: false
@@ -10,22 +10,23 @@ pre: " <b> 1.12. </b> "
 {{% /notice %}}
 
 ### Mục tiêu tuần 12:
-* Tổng hợp kết quả dự án và soạn thảo báo cáo thực tập chi tiết.
-* Rà soát toàn bộ quá trình làm việc và chuẩn bị tài liệu bàn giao.
-* Thuyết trình kết quả dự án trước đội nhóm.
+* Thực hiện kiểm thử toàn diện (End-to-End Testing) để đảm bảo chất lượng đồ án.
+* Tối ưu hóa hiệu năng và trải nghiệm người dùng cuối trên môi trường AWS.
+* Chính thức nộp báo cáo đồ án và kết thúc kỳ thực tập/môn học.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Ngày | Công việc | Kết quả |
-| --- | --- | --- | --- |
-| 2 | 23/03 | Tập hợp kết quả đạt được và soạn thảo báo cáo. | Hoàn thành |
-| 3-4 | 24-25/03 | Chỉnh sửa nội dung kỹ thuật trong báo cáo. | Hoàn thành |
-| 5 | 26/03 | Rà soát Worklog 12 tuần đảm bảo tính chuyên nghiệp. | Hoàn thành |
-| 6 | 27/03 | Họp tổng kết dự án và trình bày kết quả với Team. | Hoàn thành |
-| 7 | 28/03 | Đóng gói mã nguồn và chuẩn bị hướng dẫn cài đặt. | Hoàn thành |
-| CN | 30/03 | Kiểm tra tệp báo cáo tổng thể lần cuối. | Hoàn thành |
+| Thứ | Ngày | Công việc |
+| --- | --- | --- |
+| 2 | 23/03 | Chạy E2E Testing toàn bộ hệ thống phát hiện lỗi muộn. |
+| 3 | 24/03 | Tối ưu hóa UI và tốc độ phản hồi của AI Chatbot. |
+| 4 | 25/03 | Kiểm tra tính nhất quán dữ liệu trên MongoDB và tối ưu Backend. |
+| 5 | 26/03 | Audit phân quyền hệ thống lần cuối và khảo sát người dùng thử. |
+| 6 | 27/03 | Đóng gói bản Demo EduTrust và hoàn thiện hồ sơ nộp bài. |
+| 7 | 28/03 | Chính thức nộp báo cáo đồ án thành công. |
+| CN | 29/03 | Tổng kết và dọn dẹp các tài nguyên Cloud không cần thiết. |
 
 ### Kết quả đạt được tuần 12:
-* Hoàn thiện bản thảo báo cáo thực tập với đầy đủ các minh chứng kỹ thuật.
-* Dự án EduTrust được đánh giá cao sau buổi thuyết trình nội bộ.
-* Toàn bộ mã nguồn và tài liệu hướng dẫn được đóng gói chuyên nghiệp.
-* Sẵn sàng cho việc nộp báo cáo chính thức.
+* Hệ thống vận hành mượt mà, không còn lỗi nghiêm trọng.
+* Hoàn thành đồ án với sản phẩm EduTrust đầy đủ tính năng.
+* Nộp báo cáo đúng hạn và đạt mọi yêu cầu chuyên môn đề ra.
+* Tài khoản AWS được quản lý tối ưu về chi phí.

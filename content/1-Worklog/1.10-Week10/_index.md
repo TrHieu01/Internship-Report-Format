@@ -1,5 +1,5 @@
 ---
-title: "Week 10 Worklog"
+title: "Week 10: Monitoring & Optimization"
 date: 2025-03-05
 weight: 10
 chapter: false
@@ -10,23 +10,22 @@ pre: " <b> 1.10. </b> "
 {{% /notice %}}
 
 ### Week 10 Objectives:
-* Deploy Retrieval-Augmented Generation (RAG) for the AI system.
-* Build an intelligent Chatbot interface to support online learning.
-* Optimize AI accuracy based on the project's knowledge base.
+* Establish performance monitoring and real-time logging via CloudWatch.
+* Optimize infrastructure security and automated data backup processes.
+* Perform Stress Testing for the EduTrust system.
 
 ### Tasks to be carried out this week:
-| Day | Date | Task | Status |
-| --- | --- | --- | --- |
-| Mon | 09/03 | Researched RAG (Retrieval-Augmented Generation) workflows for AI. | Completed |
-| Tue | 10/03 | Connected S3 data to Vector Database for information retrieval. | Completed |
-| Wed | 11/03 | Integrated AI APIs for Chatbot responses based on EduTrust documents. | Completed |
-| Thu | 12/03 | Developed the Chatbot UI with Markdown formatting support. | Completed |
-| Fri | 13/03 | Optimized Prompt Engineering to enhance AI accuracy. | Completed |
-| Sat | 14/03 | Tested Chatbot features on mobile devices. | Completed |
-| Sun | 15/03 | Evaluated Chatbot performance with AI Engineers. | Completed |
+| Day | Date | Task |
+| --- | --- | --- |
+| Mon | 09/03 | Configured AWS CloudWatch to monitor logs from FastAPI and Next.js. |
+| Tue | 10/03 | Debugged and optimized response times for AI Agents. |
+| Wed | 11/03 | Set up automated Backup processes for MongoDB Atlas. |
+| Thu | 12/03 | Verified S3 Bucket security, ensuring access only via Presigned URLs. |
+| Fri | 13/03 | Conducted Stress Tests simulating multiple concurrent users during an exam. |
+| Sat | 14/03 | Finalized system operation and administration manuals. |
+| Sun | 15/03 | Verified Docker container stability in the AWS production environment. |
 
 ### Week 10 Achievements:
-* Intelligent Chatbot successfully answers questions based on lecture content.
-* Chatbot UI is user-friendly, supporting full formatting displays.
-* RAG process is stable, ensuring accurate information sourcing for AI.
-* AI system is fine-tuned for faster and more relevant responses.
+* System is closely monitored, ready for incident response.
+* Automated data backup processes ensure safety for student exam data.
+* Clearly identified system load limits to inform future scaling strategies.

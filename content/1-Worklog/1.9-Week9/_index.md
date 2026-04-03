@@ -1,5 +1,5 @@
 ---
-title: "Week 9 Worklog"
+title: "Week 9: RAG & AI Chatbot Integration"
 date: 2025-02-26
 weight: 9
 chapter: false
@@ -10,23 +10,22 @@ pre: " <b> 1.9. </b> "
 {{% /notice %}}
 
 ### Week 9 Objectives:
-* Provide flexible academic data management and reporting capabilities.
-* Integrate automatic notification services for students.
-* Optimize API retrieval performance through Caching.
+* Deploy Retrieval-Augmented Generation (RAG) for the AI system.
+* Build an intelligent Chatbot interface using Pydantic AI.
+* Optimize AI accuracy based on the project's knowledge base.
 
 ### Tasks to be carried out this week:
-| Day | Date | Task | Status |
-| --- | --- | --- | --- |
-| Mon | 02/03 | Built student list management features for teachers. | Completed |
-| Tue | 03/03 | Programmed academic result export logic to Excel/CSV formats. | Completed |
-| Wed | 04/03 | Integrated Amazon SES for automatic student notification emails. | Completed |
-| Thu | 05/03 | Optimized APIs using Caching techniques to reduce database load. | Completed |
-| Fri | 06/03 | Resolved file format and Vietnamese encoding issues in data exports. | Completed |
-| Sat | 07/03 | Reviewed source code for the data management and reporting module. | Completed |
-| Sun | 08/03 | Verified email service stability in the production environment. | Completed |
+| Day | Date | Task |
+| --- | --- | --- |
+| Mon | 02/03 | Researched RAG workflow using Pydantic AI framework. |
+| Tue | 03/03 | Connected S3 data to Vector Database for efficient retrieval. |
+| Wed | 04/03 | Integrated Multi-agent AI system for specialized responses. |
+| Thu | 05/03 | Developed Next.js Chatbot interface with Markdown support. |
+| Fri | 06/03 | Optimized Prompt Engineering to enhance response quality. |
+| Sat | 07/03 | Tested Chatbot features across both Web and Mobile views. |
+| Sun | 08/03 | Evaluated Chatbot performance with the development team. |
 
 ### Week 9 Achievements:
-* System can produce professional and accurate data reports.
-* Automated student communication process via Amazon SES.
-* System response speed increased significantly thanks to the Caching mechanism.
-* Enhanced user experience with centralized management features.
+* Intelligent Chatbot successfully answers questions based on lecture content.
+* Chatbot UI is user-friendly with fast asynchronous responses.
+* RAG process is stable, ensuring accurate information sourcing for AI.

@@ -1,5 +1,5 @@
 ---
-title: "Worklog Tuần 5"
+title: "Tuần 5: Nghiên cứu AI & Camera"
 date: 2025-01-29
 weight: 5
 chapter: false
@@ -10,23 +10,22 @@ pre: " <b> 1.5. </b> "
 {{% /notice %}}
 
 ### Mục tiêu tuần 5:
-* Nghiên cứu tính khả thi của hệ thống giám sát Camera AI và Chatbot thông minh.
-* Đề xuất kiến trúc AI Agentic Workflow để xử lý các tác vụ phức tạp.
-* Thực hiện Unit Test cho các tính năng cốt lõi đã phát triển.
+* Nghiên cứu tích hợp mô hình YOLO để giám sát camera phòng thi.
+* Thiết kế kiến trúc AI Agentic Workflow cho chatbot hỗ trợ học tập.
+* Thực hiện thử nghiệm nhận diện vật thể cơ bản (điện thoại, khuôn mặt).
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Ngày | Công việc | Kết quả |
-| --- | --- | --- | --- |
-| 2 | 02/02 | Họp Team lần 2: Đánh giá tính khả thi Camera AI và Chatbot. | Hoàn thành |
-| 3 | 03/02 | Đề xuất phương án chia nhỏ AI Agent (Agentic Workflow). | Hoàn thành |
-| 4 | 04/02 | Nghiên cứu Video Stream cho tính năng camera giám sát thi. | Hoàn thành |
-| 5 | 05/02 | Viết Unit Test cho logic Auth và nộp bài trực tuyến. | Hoàn thành |
-| 6 | 06/02 | Tìm hiểu Amazon DynamoDB cho lịch sử trò chuyện Chatbot. | Hoàn thành |
-| 7 | 07/02 | Tối ưu hóa truy vấn Database tăng tốc phản hồi AI. | Hoàn thành |
-| CN | 08/02 | Kiểm tra hệ thống và chuẩn bị cho tuần tiếp theo. | Hoàn thành |
+| Thứ | Ngày | Công việc |
+| --- | --- | --- |
+| 2 | 02/02 | Tìm hiểu mô hình YOLOv8/v10 cho bài toán phát hiện gian lận. |
+| 3 | 03/02 | Thiết lập Agentic Workflow cho chatbot bằng Pydantic AI. |
+| 4 | 04/03 | Thử nghiệm nhận diện nhiều khuôn mặt trong một khung hình camera. |
+| 5 | 05/02 | Thiết kế luồng logic: Phát hiện vi phạm -> Chụp ảnh bằng chứng -> Lưu S3. |
+| 6 | 06/02 | Nghiên cứu cách truyền phát video (streaming) từ Client lên Backend. |
+| 7 | 07/02 | Tối ưu hóa prompt cho AI Agent để phân loại câu hỏi của học sinh. |
+| CN | 08/02 | Đánh giá độ trễ của hệ thống AI khi xử lý thời gian thực. |
 
 ### Kết quả đạt được tuần 5:
-* Xác định được mô hình AI Agent phù hợp cho hệ thống EduTrust.
-* Hiểu rõ cơ chế truyền phát video thực tế trên trình duyệt cho tính năng giám sát.
-* Hệ thống ổn định hơn nhờ các bản Unit Test được bổ sung.
-* Cấu hình bước đầu cho việc lưu trữ dữ liệu phi cấu trúc trên DynamoDB.
+* Xác định được mô hình YOLO phù hợp cho việc giám sát thi.
+* Kiến trúc Chatbot đa tác vụ (Multi-agent) đã được định hình rõ nét.
+* Hiểu rõ cơ chế capture frame và gửi dữ liệu ảnh từ trình duyệt.
