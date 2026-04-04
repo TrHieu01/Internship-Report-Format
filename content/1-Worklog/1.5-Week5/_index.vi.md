@@ -1,7 +1,7 @@
 ---
-title: "Worklog Tuần 5"
-date: 2024-01-01
-weight: 1
+title: "Tuần 5: Nghiên cứu AI & Camera"
+date: 2025-01-29
+weight: 5
 chapter: false
 pre: " <b> 1.5. </b> "
 ---
@@ -9,51 +9,23 @@ pre: " <b> 1.5. </b> "
 ⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
 {{% /notice %}}
 
-
 ### Mục tiêu tuần 5:
-
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Nghiên cứu tích hợp mô hình YOLO để giám sát camera phòng thi.
+* Thiết kế kiến trúc AI Agentic Workflow cho chatbot hỗ trợ học tập.
+* Thực hiện thử nghiệm nhận diện vật thể cơ bản (điện thoại, khuôn mặt).
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
+| Thứ | Ngày | Công việc |
+| --- | --- | --- |
+| 2 | 02/02 | Tìm hiểu mô hình YOLOv8/v10 cho bài toán phát hiện gian lận. |
+| 3 | 03/02 | Thiết lập Agentic Workflow cho chatbot bằng Pydantic AI. |
+| 4 | 04/03 | Thử nghiệm nhận diện nhiều khuôn mặt trong một khung hình camera. |
+| 5 | 05/02 | Thiết kế luồng logic: Phát hiện vi phạm -> Chụp ảnh bằng chứng -> Lưu S3. |
+| 6 | 06/02 | Nghiên cứu cách truyền phát video (streaming) từ Client lên Backend. |
+| 7 | 07/02 | Tối ưu hóa prompt cho AI Agent để phân loại câu hỏi của học sinh. |
+| CN | 08/02 | Đánh giá độ trễ của hệ thống AI khi xử lý thời gian thực. |
 
 ### Kết quả đạt được tuần 5:
-
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Xác định được mô hình YOLO phù hợp cho việc giám sát thi.
+* Kiến trúc Chatbot đa tác vụ (Multi-agent) đã được định hình rõ nét.
+* Hiểu rõ cơ chế capture frame và gửi dữ liệu ảnh từ trình duyệt.
