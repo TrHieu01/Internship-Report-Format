@@ -34,18 +34,29 @@ Giải pháp giúp giảm tải công việc giám sát thủ công cho giáo vi
 ### 3. Kiến trúc giải pháp  
 Nền tảng áp dụng kiến trúc **Fullstack monorepo** với backend Python (FastAPI) và frontend Next.js, triển khai qua Docker container. Dữ liệu được lưu trữ trên MongoDB (collections: users, exams, classes, submissions, violations), cache session hội thoại trên Redis, và hình ảnh vi phạm trên Amazon S3.  
 
-![EduTrust Platform Architecture](/images/2-Proposal/platform_architecture.jpeg)
+![Kiến trúc giải pháp EduTrust](/images/2-Proposal/edutrust-architect.png)
 
-*Dịch vụ & công nghệ sử dụng*  
-- *Amazon S3*: Lưu trữ ảnh vi phạm, file tài liệu — hỗ trợ presigned URL để truy cập an toàn.  
-- *AWS Amplify*: Triển khai và hosting frontend Next.js.  
-- *MongoDB (Atlas)*: Cơ sở dữ liệu NoSQL cho users, exams, classes, submissions, violations.  
-- *Redis*: Cache hội thoại AI (conversation context) với TTL, rate limiting.  
+*Dịch vụ & công nghệ sử dụng (theo kiến trúc)*  
+- *AWS Amplify + CloudFront*: Hosting frontend Next.js và phân phối nội dung qua CDN.  
+- *AWS Route 53 + AWS ACM*: DNS và quản lý chứng chỉ TLS/HTTPS.  
+- *AWS WAF*: Bảo vệ lớp web trước các pattern tấn công phổ biến.  
+- *Amazon VPC (public/private subnet)*: Cô lập mạng, phân tách tầng public/private.  
+- *Application Load Balancer (ALB)*: Điều phối request vào backend.  
+- *Amazon EC2 Auto Scaling*: Vận hành backend theo tải với khả năng mở rộng tự động.  
+- *Amazon ECR*: Lưu trữ Docker image cho backend.  
+- *Amazon S3*: Lưu trữ ảnh vi phạm, log ALB và Terraform state.  
+- *Amazon DynamoDB*: Lưu trữ dữ liệu nhanh theo key-value (theo ảnh kiến trúc).  
+- *Amazon ElastiCache for Redis*: Cache session/hội thoại và dữ liệu truy cập nhanh.  
+- *Amazon Cognito*: Xác thực người dùng, phân quyền theo vai trò.  
+- *Amazon CloudWatch + VPC Flow Logs + SNS*: Giám sát, log và cảnh báo.  
+- *AWS KMS + SSM Parameter Store + PrivateLink*: Bảo mật secret và truy cập nội bộ.  
+- *Terraform + GitHub Actions*: IaC và CI/CD tự động hoá triển khai.  
+
+*Công nghệ ứng dụng*  
 - *FastAPI*: Backend API framework — async, tự động tạo docs (Swagger/ReDoc).  
 - *Next.js 16 + Tailwind CSS v4*: Frontend SPA với App Router, server/client components.  
 - *YOLOv26n (Ultralytics)*: Mô hình object detection cho giám sát phòng thi.  
 - *Pydantic AI + LiteLLM*: Orchestrator multi-agent cho chatbot hỗ trợ học tập.  
-- *Logfire*: Observability và tracing cho FastAPI và Pydantic AI.  
 - *Docker*: Containerize backend với multi-stage build (Ubuntu 24.04).  
 
 *Thiết kế thành phần*  
@@ -57,11 +68,12 @@ Nền tảng áp dụng kiến trúc **Fullstack monorepo** với backend Python
 
 ### 4. Triển khai kỹ thuật  
 *Các giai đoạn triển khai*  
-Dự án được chia thành 4 giai đoạn chính:  
-1. *Nghiên cứu và thiết kế kiến trúc*: Nghiên cứu các công nghệ (FastAPI, Next.js, YOLO, Pydantic AI), thiết kế database schema, API contract và kiến trúc hệ thống (3 tuần).  
-2. *Phát triển core features*: Xây dựng hệ thống auth (JWT của cognito), CRUD lớp học, quản lý bài thi, chấm điểm tự động (3 tuần).  
-3. *Tích hợp AI & Camera*: Tích hợp YOLO cho phát hiện vi phạm, xây dựng hệ thống multi-agent chatbot, kết nối S3/Redis (3 tuần).  
-4. *Frontend, kiểm thử & triển khai*: Hoàn thiện dashboard Next.js cho 3 vai trò, kiểm thử end-to-end, Docker hóa và triển khai lên AWS (3 tuần).  
+Dự án được chia thành 5 giai đoạn chính:  
+1. *Tìm hiểu dịch vụ AWS nền tảng*: Làm quen các dịch vụ trong kiến trúc (VPC, EC2/ALB/ASG, S3, ECR, Cognito, CloudWatch, KMS, SSM, WAF) và quy trình CI/CD/IaC.  
+2. *Nghiên cứu và thiết kế kiến trúc*: Nghiên cứu các công nghệ (FastAPI, Next.js, YOLO, Pydantic AI), thiết kế database schema, API contract và kiến trúc hệ thống.  
+3. *Phát triển core features*: Xây dựng hệ thống auth (JWT của cognito), CRUD lớp học, quản lý bài thi, chấm điểm tự động.  
+4. *Tích hợp AI & Camera*: Tích hợp YOLO cho phát hiện vi phạm, xây dựng hệ thống multi-agent chatbot, kết nối S3/Redis.  
+5. *Frontend & kiểm thử*: Hoàn thiện dashboard Next.js cho 3 vai trò, kiểm thử end-to-end và Docker hóa.  
 
 *Yêu cầu kỹ thuật*  
 - *Backend*: Python ≥ 3.11, FastAPI, Motor (async MongoDB driver), Redis ≥ 5.0, Boto3 (AWS SDK), Ultralytics (YOLO), Pydantic AI + LiteLLM, Kreuzberg (document parsing), SlowAPI (rate limiting).  
@@ -69,41 +81,54 @@ Dự án được chia thành 4 giai đoạn chính:
 - *Hạ tầng*: Docker (multi-stage build), MongoDB Atlas, Redis Cloud, Amazon S3, AWS Amplify, Logfire (observability).  
 
 ### 5. Lộ trình & Mốc triển khai  
-- *Tuần 1–2*: Nghiên cứu công nghệ, thiết kế kiến trúc và database schema.  
-- *Tuần 3–5*: Phát triển backend core (auth, classes, exams, submissions).  
-- *Tuần 6–8*: Tích hợp YOLO detection, AI chatbot (multi-agent), S3 storage.  
-- *Tuần 9–10*: Phát triển frontend dashboard (admin/teacher/student views).  
-- *Tuần 11*: Kiểm thử tích hợp, tối ưu hiệu năng, Docker hóa.  
-- *Tuần 12*: Triển khai lên AWS (Amplify + EC2/ECS cho backend), viết tài liệu.  
+- *Tuần 1–2*: Tìm hiểu các dịch vụ AWS theo kiến trúc (VPC, EC2/ALB/ASG, S3, ECR, Cognito, CloudWatch, KMS/SSM, WAF) và quy trình CI/CD/IaC.  
+- *Tuần 3–4*: Nghiên cứu công nghệ, thiết kế kiến trúc và database schema.  
+- *Tuần 5–6*: Phát triển backend core (auth, classes, exams, submissions).  
+- *Tuần 7–8*: Tích hợp YOLO detection, AI chatbot (multi-agent), S3 storage.  
+- *Tuần 9*: Phát triển frontend dashboard (admin/teacher/student views).  
+- *Tuần 10*: Kiểm thử tích hợp, tối ưu hiệu năng và Docker hóa.  
 
 ### 6. Ước tính ngân sách  
 
-*Chi phí hạ tầng (hàng tháng)*  
-- MongoDB Atlas (Free Tier — M0): 0,00 USD/tháng (512 MB storage).  
-- Redis Cloud (Free Tier): 0,00 USD/tháng (30 MB).  
-- Amazon S3: ~0,50 USD/tháng (ước tính 5 GB ảnh vi phạm, PUT/GET requests).  
-- AWS Amplify (Frontend hosting): ~0,35 USD/tháng.  
-- EC2 hoặc ECS (Backend): ~3,00 USD/tháng (t3.micro hoặc Fargate spot).  
-- Truyền dữ liệu (Data Transfer): ~0,10 USD/tháng.  
+*Giả định theo kiến trúc*  
+- Môi trường nhỏ (staging/production nhỏ), lưu lượng thấp–trung bình.  
+- Backend chạy EC2 Auto Scaling (t3.small, 2 instance), ALB hoạt động 24/7.  
+- Frontend host trên Amplify + CloudFront, dùng WAF.  
+- Dữ liệu vi phạm lưu trên S3 (~10–20 GB/tháng).  
 
-*Tổng*: ~3,95 USD/tháng, ~47,40 USD/12 tháng  
+*Chi phí hạ tầng (hàng tháng – ước tính)*  
+- VPC Endpoints (Interface cho ECR/SSM/STS/Logs…): ~30–60 USD  
+- EC2 Auto Scaling (2 x t3.small): ~30–40 USD  
+- Application Load Balancer: ~16–25 USD  
+- Amazon S3 (ảnh vi phạm, log ALB, terraform state): ~2–6 USD  
+- Amazon CloudFront + Amplify: ~1–5 USD  
+- AWS WAF: ~5–10 USD  
+- Amazon ElastiCache (Redis – cache nhỏ): ~15–25 USD  
+- Amazon DynamoDB (low traffic): ~1–3 USD  
+- Amazon ECR (storage image): ~1–3 USD  
+- Amazon Cognito (<= 50k MAU): ~0–2 USD  
+- Amazon CloudWatch + VPC Flow Logs + SNS: ~5–10 USD  
+- AWS KMS + SSM Parameter Store: ~1–3 USD  
+- Data Transfer: ~2–6 USD  
+
+*Tổng dự kiến*: ~110–195 USD/tháng (đã tính VPC Endpoints; phụ thuộc lưu lượng và dung lượng S3)  
 
 *Chi phí API bên thứ ba*  
-- OpenAI/LiteLLM API: Tùy theo usage (có thể dùng free tier hoặc self-hosted model).  
-- Tavily Search API: Free tier (1.000 requests/tháng).  
+- OpenAI/LiteLLM API: tuỳ usage.  
+- Các dịch vụ tìm kiếm ngoài (nếu dùng): tuỳ gói.  
 
 ### 7. Đánh giá rủi ro  
 *Ma trận rủi ro*  
 - Độ chính xác YOLO thấp (false positive/negative): Ảnh hưởng cao, xác suất trung bình.  
 - Mất kết nối camera/mạng của học sinh: Ảnh hưởng trung bình, xác suất trung bình.  
 - Vượt ngân sách API (LLM calls): Ảnh hưởng trung bình, xác suất thấp.  
-- MongoDB Atlas downtime: Ảnh hưởng cao, xác suất thấp.  
+- Chuyển từ MongoDB sang MySQL gây thay đổi schema & query phức tạp: Ảnh hưởng trung bình–cao, xác suất trung bình.  
 
 *Chiến lược giảm thiểu*  
 - YOLO: Điều chỉnh ngưỡng confidence (min 0.5), chỉ alert sau nhiều frame liên tiếp, cho phép giáo viên review vi phạm thủ công.  
 - Mạng: Client-side detection với ONNX Runtime Web (fallback), ghi log vi phạm locally và đồng bộ khi có mạng.  
 - Chi phí API: Rate limiting (SlowAPI), đặt budget alerts, sử dụng model nhẹ hơn cho tác vụ đơn giản.  
-- Database: Backup định kỳ, sử dụng MongoDB Atlas replica set.  
+- Database: Thiết kế lớp repository để trừu tượng hoá DB, chuẩn hoá schema, chuẩn bị script migrate dữ liệu nếu chuyển MySQL.  
 
 *Kế hoạch dự phòng*  
 - Chuyển sang giám sát thủ công (giáo viên xem camera trực tiếp) nếu AI detection gặp sự cố.  
