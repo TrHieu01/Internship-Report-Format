@@ -6,120 +6,72 @@ chapter: false
 pre: " <b> 4.2. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+# Bài thu hoạch “Cloud Mastery Series #2: DevOps Fundamentals & Infrastructure”
 
-# Bài thu hoạch “GenAI-powered App-DB Modernization workshop”
+### Mục tiêu sự kiện
 
-### Mục Đích Của Sự Kiện
+- Hệ thống hóa kiến thức về IaC: Cung cấp cái nhìn toàn diện về Infrastructure as Code và cách triển khai thực tế với Terraform trên AWS.  
+- Làm chủ điều phối Container: Giới thiệu kiến trúc Kubernetes (K8s) và cách quản lý ứng dụng hiện đại trên môi trường Cloud-native.  
+- Tối ưu hóa vận hành với Elixir: Khám phá giải pháp Elixir/Erlang như một công cụ thống nhất cho hệ thống DevOps có độ sẵn sàng cao và khả năng chịu lỗi.  
+- Thực hành thực tế (Hands-on): Trình diễn các kỹ thuật triển khai hạ tầng và ứng dụng thông qua Demo trực tiếp.  
 
-- Chia sẻ best practices trong thiết kế ứng dụng hiện đại
-- Giới thiệu phương pháp DDD và event-driven architecture
-- Hướng dẫn lựa chọn compute services phù hợp
-- Giới thiệu công cụ AI hỗ trợ development lifecycle
+### Diễn giả
 
-### Danh Sách Diễn Giả
+- Thinh Nguyễn – FCAJ Cloud Engineer Trainee (Chuyên gia về IaC & Terraform).  
+- Bảo Huỳnh – Junior Cloud Native Developer tại Endava / Founder ITea Lab (Chuyên gia Kubernetes).  
+- Nguyễn Tạ Minh Triết – R&D Member tại ITea Lab / SAP Developer Intern tại Bosch GSV (Chuyên gia Elixir).  
 
-- **Jignesh Shah** - Director, Open Source Databases
-- **Erica Liu** - Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** - Assc. Specialist SA, Serverless Amazon Web Services
+### Điểm nổi bật
 
-### Nội Dung Nổi Bật
+#### Infrastructure as Code (IaC) với Terraform
 
-#### Đưa ra các ảnh hưởng tiêu cực của kiến trúc ứng dụng cũ
+- Phân tích sự dịch chuyển từ "ClickOps" sang tự động hóa hạ tầng để tránh sai sót con người và tăng tính nhất quán.  
+- So sánh AWS CloudFormation, AWS CDK và Terraform (HCL).  
+- Quy trình quản lý State file và các lệnh thực thi cốt lõi (plan, apply, destroy).  
 
-- Thời gian release sản phẩm lâu → Mất doanh thu/bỏ lỡ cơ hội
-- Hoạt động kém hiệu quả → Mất năng suất, tốn kém chi phí
-- Không tuân thủ các quy định về bảo mật → Mất an ninh, uy tín
+#### Kubernetes (K8s) Architecture
 
-#### Chuyển đổi sang kiến trúc ứng dụng mới - Microservice Architecture
+- Giải quyết thách thức quản lý hàng ngàn container: tự phục hồi (self-healing) và tự động mở rộng (auto-scaling).  
+- Đi sâu vào các thành phần: Control Plane, Worker Nodes, Pods, Deployments và Services.  
+- Giới thiệu công cụ hỗ trợ: Helm (quản lý package) và K9s (giao diện terminal trực quan).  
 
-Chuyển đổi thành hệ thống modular – từng chức năng là một **dịch vụ độc lập** giao tiếp với nhau qua **sự kiện** với 3 trụ cột cốt lõi:
+#### Elixir in DevOps Pipeline
 
-- **Queue Management**: Xử lý tác vụ bất đồng bộ
-- **Caching Strategy:** Tối ưu performance
-- **Message Handling:** Giao tiếp linh hoạt giữa services
+- Sức mạnh của máy ảo BEAM trong việc xử lý hàng triệu kết nối đồng thời với chi phí cực thấp.  
+- Triết lý "Let it crash": Sử dụng Supervision Trees để hệ thống tự phục hồi mà không cần can thiệp thủ công.  
+- Case study: Chuyển đổi từ Serverless (Node.js/Lambda) sang Elixir giúp giảm chi phí từ $30,000/tháng xuống còn dưới $400/tháng.  
 
-#### Domain-Driven Design (DDD)
+### Kết quả rút ra
 
-- **Phương pháp 4 bước**: Xác định domain events → sắp xếp timeline → identify actors → xác định bounded contexts
-- **Case study bookstore**: Minh họa cách áp dụng DDD thực tế
-- **Context mapping**: 7 patterns tích hợp bounded contexts
+- Tư duy tự động hóa: Hạ tầng không còn là các server đơn lẻ mà là các dòng code có thể phiên bản hóa (versioning) và tái sử dụng.  
+- Quản lý Cluster hiệu quả: Hiểu rõ Amazon EKS là giải pháp tối ưu cho doanh nghiệp để giảm bớt gánh nặng quản lý Control Plane của Kubernetes.  
+- Khả năng chịu lỗi (Fault-Tolerance): Việc thiết kế hệ thống có khả năng tự phục hồi (như trong Elixir) quan trọng hơn việc cố gắng viết code không bao giờ lỗi.  
+- Tối ưu hóa chi phí (Cost Optimization): Lựa chọn đúng công nghệ (như Elixir cho các task tính toán song song) có thể mang lại hiệu quả ROI vượt trội so với các mô hình truyền thống.  
 
-#### Event-Driven Architecture
+### Ứng dụng vào công việc
 
-- **3 patterns tích hợp**: Publish/Subscribe, Point-to-point, Streaming
-- **Lợi ích**: Loose coupling, scalability, resilience
-- **So sánh sync vs async**: Hiểu rõ trade-offs (sự đánh đổi)
+- Định hướng dự án EduTrust: Sử dụng Terraform để thiết lập hạ tầng AWS một cách chuẩn hóa, giúp dễ dàng sao chép môi trường (Dev/Staging/Prod).  
+- Triển khai ứng dụng: Cân nhắc đóng gói các microservices của EduTrust vào Docker và điều phối bằng Kubernetes để đảm bảo tính sẵn sàng cao.  
+- Cải thiện hiệu suất: Tìm hiểu sâu hơn về kiến trúc hướng sự kiện (Event-driven) thông qua cách Elixir xử lý tiến trình để áp dụng vào các tính năng cần xử lý thời gian thực.  
 
-#### Compute Evolution
+### Trải nghiệm sự kiện
 
-- **Shared Responsibility Model**: Từ EC2 → ECS → Fargate → Lambda
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value
-- **Functions vs Containers**: Criteria lựa chọn phù hợp
+Chuỗi workshop mang lại một hành trình từ hạ tầng đến ứng dụng rất logic:  
 
-#### Amazon Q Developer
+- Nội dung chuyên sâu: Không chỉ dừng lại ở lý thuyết, các phiên Demo về Terraform và K9s giúp hình dung rõ cách vận hành thực tế của một kỹ sư Cloud.  
+- Góc nhìn đa chiều: Sự kết hợp giữa công nghệ phổ biến (AWS, K8s) và công nghệ đặc thù hiệu suất cao (Elixir) giúp mở rộng tư duy chọn lựa giải pháp.  
+- Sự kết nối: Cơ hội trao đổi với các diễn giả có kinh nghiệm thực chiến từ các tập đoàn lớn như Endava và Bosch.  
 
-- **SDLC automation**: Từ planning đến maintenance
-- **Code transformation**: Java upgrade, .NET modernization
-- **AWS Transform agents**: VMware, Mainframe, .NET migration
+### Bài học rút ra
 
-### Những Gì Học Được
+- Hiện đại hóa hạ tầng bắt buộc phải đi kèm với IaC để đảm bảo tốc độ và an toàn.  
+- Kubernetes là "hệ điều hành" của đám mây, nhưng cần các công cụ bổ trợ như Helm và K9s để quản trị hiệu quả.  
+- Đừng ngại thử nghiệm các ngôn ngữ/nền tảng mới (như Elixir) nếu chúng giải quyết được bài toán về chi phí và độ tin cậy tốt hơn các giải pháp phổ thông.  
 
-#### Tư Duy Thiết Kế
+### Một số hình ảnh tham gia sự kiện
 
-- **Business-first approach**: Luôn bắt đầu từ business domain, không phải technology
-- **Ubiquitous language**: Importance của common vocabulary giữa business và tech teams
-- **Bounded contexts**: Cách identify và manage complexity trong large systems
+(Chưa có ảnh sự kiện)
 
-#### Kiến Trúc Kỹ Thuật
+### Tổng kết
 
-- **Event storming technique**: Phương pháp thực tế để mô hình hóa quy trình kinh doanh
-- Sử dụng **Event-driven communication** thay vì synchronous calls
-- **Integration patterns**: Hiểu khi nào dùng sync, async, pub/sub, streaming
-- **Compute spectrum**: Criteria chọn từ VM → containers → serverless
-
-#### Chiến Lược Hiện Đại Hóa
-
-- **Phased approach**: Không rush, phải có roadmap rõ ràng
-- **7Rs framework**: Nhiều con đường khác nhau tùy thuộc vào đặc điểm của mỗi ứng dụng
-- **ROI measurement**: Cost reduction + business agility
-
-### Ứng Dụng Vào Công Việc
-
-- **Áp dụng DDD** cho project hiện tại: Event storming sessions với business team
-- **Refactor microservices**: Sử dụng bounded contexts để identify service boundaries
-- **Implement event-driven patterns**: Thay thế một số sync calls bằng async messaging
-- **Serverless adoption**: Pilot AWS Lambda cho một số use cases phù hợp
-- **Try Amazon Q Developer**: Integrate vào development workflow để boost productivity
-
-### Trải nghiệm trong event
-
-Tham gia workshop **“GenAI-powered App-DB Modernization”** là một trải nghiệm rất bổ ích, giúp tôi có cái nhìn toàn diện về cách hiện đại hóa ứng dụng và cơ sở dữ liệu bằng các phương pháp và công cụ hiện đại. Một số trải nghiệm nổi bật:
-
-#### Học hỏi từ các diễn giả có chuyên môn cao
-- Các diễn giả đến từ AWS và các tổ chức công nghệ lớn đã chia sẻ **best practices** trong thiết kế ứng dụng hiện đại.
-- Qua các case study thực tế, tôi hiểu rõ hơn cách áp dụng **Domain-Driven Design (DDD)** và **Event-Driven Architecture** vào các project lớn.
-
-#### Trải nghiệm kỹ thuật thực tế
-- Tham gia các phiên trình bày về **event storming** giúp tôi hình dung cách **mô hình hóa quy trình kinh doanh** thành các domain events.
-- Học cách **phân tách microservices** và xác định **bounded contexts** để quản lý sự phức tạp của hệ thống lớn.
-- Hiểu rõ trade-offs giữa **synchronous và asynchronous communication** cũng như các pattern tích hợp như **pub/sub, point-to-point, streaming**.
-
-#### Ứng dụng công cụ hiện đại
-- Trực tiếp tìm hiểu về **Amazon Q Developer**, công cụ AI hỗ trợ SDLC từ lập kế hoạch đến maintenance.
-- Học cách **tự động hóa code transformation** và pilot serverless với **AWS Lambda**, từ đó nâng cao năng suất phát triển.
-
-#### Kết nối và trao đổi
-- Workshop tạo cơ hội trao đổi trực tiếp với các chuyên gia, đồng nghiệp và team business, giúp **nâng cao ngôn ngữ chung (ubiquitous language)** giữa business và tech.
-- Qua các ví dụ thực tế, tôi nhận ra tầm quan trọng của **business-first approach**, luôn bắt đầu từ nhu cầu kinh doanh thay vì chỉ tập trung vào công nghệ.
-
-#### Bài học rút ra
-- Việc áp dụng DDD và event-driven patterns giúp giảm **coupling**, tăng **scalability** và **resilience** cho hệ thống.
-- Chiến lược hiện đại hóa cần **phased approach** và đo lường **ROI**, không nên vội vàng chuyển đổi toàn bộ hệ thống.
-- Các công cụ AI như Amazon Q Developer có thể **boost productivity** nếu được tích hợp vào workflow phát triển hiện tại.
-
-#### Một số hình ảnh khi tham gia sự kiện
-* Thêm các hình ảnh của các bạn tại đây
-> Tổng thể, sự kiện không chỉ cung cấp kiến thức kỹ thuật mà còn giúp tôi thay đổi cách tư duy về thiết kế ứng dụng, hiện đại hóa hệ thống và phối hợp hiệu quả hơn giữa các team.
+Chuỗi sự kiện đã cung cấp một bộ khung kiến thức vững chắc về DevOps hiện đại. Đây là nền tảng quan trọng để tôi áp dụng vào việc xây dựng và vận hành dự án EduTrust một cách chuyên nghiệp, sẵn sàng cho các bài toán quy mô lớn trên Cloud.

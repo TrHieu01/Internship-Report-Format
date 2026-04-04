@@ -18,38 +18,53 @@ In this section, you need to summarize the contents of the workshop that you **p
 The IoT Weather Platform is designed for the ITea Lab team in Ho Chi Minh City to enhance weather data collection and analysis. It supports up to 5 weather stations, with potential scalability to 10-15, utilizing Raspberry Pi edge devices with ESP32 sensors to transmit data via MQTT. The platform leverages AWS Serverless services to deliver real-time monitoring, predictive analytics, and cost efficiency, with access restricted to 5 lab members via Amazon Cognito.
 
 ### 2. Problem Statement
-### What’s the Problem?
-Current weather stations require manual data collection, becoming unmanageable with multiple units. There is no centralized system for real-time data or analytics, and third-party platforms are costly and overly complex.
+### Current Problems
+Online exams face multiple challenges: manual proctoring is labor‑intensive, cheating is difficult to detect (phones, multiple faces in frame, leaving the camera), there is no centralized system to manage classes — exams — results, and students lack intelligent learning support tools.
 
 ### The Solution
-The platform uses AWS IoT Core to ingest MQTT data, AWS Lambda and API Gateway for processing, Amazon S3 for storage (including a data lake), and AWS Glue Crawlers and ETL jobs to extract, transform, and load data from the S3 data lake to another S3 bucket for analysis. AWS Amplify with Next.js provides the web interface, and Amazon Cognito ensures secure access. Similar to Thingsboard and CoreIoT, users can register new devices and manage connections, though this platform operates on a smaller scale and is designed for private use. Key features include real-time dashboards, trend analysis, and low operational costs.
+EduTrust provides a comprehensive platform including:
+- **Class & Exam Management**: Admin creates classes, assigns homeroom/subject teachers; teachers create multiple‑choice exams with secret keys and start/end times.
+- **AI Proctoring**: Integrates YOLOv26n to detect violations in real time (MULTIPLE_FACES, FACE_DISAPPEARED, FORBIDDEN_OBJECT). Evidence images are stored in Amazon S3 and logged in MongoDB.
+- **AI Learning Assistant**: Multi‑agent system (Pydantic AI) helps students search knowledge, ask questions, and find learning materials.
+- **Authentication & Security**: JWT (via Cognito) with role‑based access control (RBAC).
 
-### Benefits and Return on Investment
-The solution establishes a foundational resource for lab members to develop a larger IoT platform, serving as a study resource, and provides a data foundation for AI enthusiasts for model training or analysis. It reduces manual reporting for each station via a centralized platform, simplifying management and maintenance, and improves data reliability. Monthly costs are $0.66 USD per the AWS Pricing Calculator, with a 12-month total of $7.92 USD. All IoT equipment costs are covered by the existing weather station setup, eliminating additional development expenses. The break-even period of 6-12 months is achieved through significant time savings from reduced manual work.
+### Benefits and ROI
+The solution reduces teachers’ manual workload, improves transparency and fairness, and automates grading with evidence stored in S3. Operational cost stays low by leveraging MongoDB Atlas (free tier), Redis Cloud, and AWS S3/Amplify. Estimated AWS cost is under 5 USD/month for a mid‑size school.
 
 ### 3. Solution Architecture
-The platform employs a serverless AWS architecture to manage data from 5 Raspberry Pi-based stations, scalable to 15. Data is ingested via AWS IoT Core, stored in an S3 data lake, and processed by AWS Glue Crawlers and ETL jobs to transform and load it into another S3 bucket for analysis. Lambda and API Gateway handle additional processing, while Amplify with Next.js hosts the dashboard, secured by Cognito. The architecture is detailed below:
+EduTrust applies a **fullstack monorepo** architecture with a Python FastAPI backend and a Next.js frontend, deployed via Docker. Data is stored in MongoDB (users, exams, classes, submissions, violations), session/conversation cache uses Redis, and violation images are stored in Amazon S3. The architecture is shown below:
 
-![IoT Weather Station Architecture](/images/2-Proposal/edge_architecture.jpeg)
+![EduTrust Solution Architecture](/images/2-Proposal/edutrust-architect.png)
 
-![IoT Weather Platform Architecture](/images/2-Proposal/platform_architecture.jpeg)
+### Services & Technology (Aligned with Architecture)
+- **AWS Amplify + CloudFront**: Hosts the Next.js frontend and delivers content via CDN.
+- **Amazon Route 53 + AWS ACM**: DNS and TLS/HTTPS certificate management.
+- **AWS WAF**: Web application firewall protection.
+- **Amazon VPC (public/private subnets)**: Network isolation and segmentation.
+- **Application Load Balancer (ALB)**: Distributes traffic to backend services.
+- **Amazon EC2 Auto Scaling**: Scales backend compute based on load.
+- **Amazon ECR**: Container registry for backend images.
+- **Amazon S3**: Stores violation images, ALB logs, and Terraform state.
+- **Amazon DynamoDB**: Key-value data store (as shown in the architecture).
+- **Amazon ElastiCache for Redis**: Cache/session layer for fast access.
+- **Amazon Cognito**: Authentication and user management.
+- **Amazon CloudWatch + VPC Flow Logs + SNS**: Monitoring, logs, and alerting.
+- **AWS KMS + SSM Parameter Store + PrivateLink**: Secrets and secure internal access.
+- **Terraform + GitHub Actions**: Infrastructure as Code and CI/CD automation.
 
-### AWS Services Used
-- **AWS IoT Core**: Ingests MQTT data from 5 stations, scalable to 15.
-- **AWS Lambda**: Processes data and triggers Glue jobs (two functions).
-- **Amazon API Gateway**: Facilitates web app communication.
-- **Amazon S3**: Stores raw data in a data lake and processed outputs (two buckets).
-- **AWS Glue**: Crawlers catalog data, and ETL jobs transform and load it.
-- **AWS Amplify**: Hosts the Next.js web interface.
-- **Amazon Cognito**: Secures access for lab users.
+### Application Stack
+- **FastAPI**: Async backend API framework with automatic docs.
+- **Next.js + Tailwind CSS**: Frontend app with modern UI.
+- **YOLOv26n (Ultralytics)**: AI object detection for proctoring.
+- **Pydantic AI + LiteLLM**: Multi-agent orchestration for the chatbot.
+- **Docker**: Containerization with multi-stage builds.
 
 ### Component Design
-- **Edge Devices**: Raspberry Pi collects and filters sensor data, sending it to IoT Core.
-- **Data Ingestion**: AWS IoT Core receives MQTT messages from the edge devices.
-- **Data Storage**: Raw data is stored in an S3 data lake; processed data is stored in another S3 bucket.
-- **Data Processing**: AWS Glue Crawlers catalog the data, and ETL jobs transform it for analysis.
-- **Web Interface**: AWS Amplify hosts a Next.js app for real-time dashboards and analytics.
-- **User Management**: Amazon Cognito manages user access, allowing up to 5 active accounts.
+- **Authentication (Auth)**: JWT access/refresh tokens, session via cookies, RBAC (admin/teacher/student).
+- **Class Management**: Assign homeroom/subject teachers, add/remove students, auto update status (active/inactive).
+- **Exam Management**: Create MCQ exams, auto generate secret keys, control start/end time, auto grading on submit.
+- **Camera Proctoring (Detection)**: CameraService receives frames, YOLO detects violations, ViolationLogger writes MongoDB + S3, ScreenshotUtils captures evidence.
+- **AI Agent**: UnifiedAgent orchestrates sub‑agents (technical, social, general, web_search) with tool delegation and WebSocket streaming.
 
 ### 4. Technical Implementation
 **Implementation Phases**
