@@ -1,9 +1,9 @@
 ---
 title : "Cognito (Xác thực người dùng)"
 date : 2024-01-01
-weight : 2
+weight : 3
 chapter : false
-pre : " <b> 4.6.2 </b> "
+pre : " <b> 4.6.3 </b> "
 ---
 
 #### Mục tiêu
