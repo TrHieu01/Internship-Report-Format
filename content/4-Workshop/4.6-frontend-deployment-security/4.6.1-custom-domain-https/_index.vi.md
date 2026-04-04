@@ -1,9 +1,9 @@
 ---
 title : "Custom Domain & HTTPS"
 date : 2024-01-01
-weight : 3
+weight : 1
 chapter : false
-pre : " <b> 4.6.3 </b> "
+pre : " <b> 4.6.1 </b> "
 ---
 
 #### Tổng quan
@@ -18,6 +18,5 @@ Trình tự thực hiện:
 
 #### Nội dung
 
-1. [Thiết lập Route53 cho domain Name.com](4.6.3.1-acm-route53-cicd/)
-2. [Cấp chứng chỉ ACM cho domain](4.6.3.2-nameserver-domain-provider/)
-3. [Gắn domain vào Amplify](4.6.3.3-route53-dns-records/)
+1. [Thiết lập Route53 cho domain Name.com](4.6.1.1-acm-route53-cicd/)
+2. [Cấp chứng chỉ ACM cho domain](4.6.1.2-nameserver-domain-provider/)

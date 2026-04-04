@@ -1,9 +1,9 @@
 ---
 title : "Triển khai Frontend bằng Amplify"
 date : 2024-01-01
-weight : 1
+weight : 2
 chapter : false
-pre : " <b> 4.6.1 </b> "
+pre : " <b> 4.6.2 </b> "
 ---
 
 #### Mục tiêu
@@ -13,7 +13,6 @@ Triển khai frontend từ GitHub lên AWS Amplify để tự động build và 
 #### Tổng quan
 
 AWS Amplify cung cấp cơ chế build, host và phát hành frontend theo nhánh, tích hợp pipeline build và hỗ trợ cấu hình domain/HTTPS.
-  
 
 #### Kết nối repo GitHub, chọn branch triển khai
 
@@ -26,6 +25,10 @@ AWS Amplify cung cấp cơ chế build, host và phát hành frontend theo nhán
 #### Custom domain
 
 Phần cấu hình custom domain và HTTPS được trình bày chi tiết ở mục 4.6.3 theo stack Name.com, Route 53 và ACM.
+
+1. Vào Amplify, chọn Add domain và chọn domain ở Route 53.
+2. Amplify tự tạo record CNAME/ALIAS.
+3. Kiểm tra HTTPS hoạt động và redirect HTTP → HTTPS.
 
 #### Cấu hình build (amplify.yml)
 

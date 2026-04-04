@@ -1,9 +1,9 @@
 ---
 title : "Custom Domain & HTTPS"
 date : 2024-01-01
-weight : 3
+weight : 1
 chapter : false
-pre : " <b> 4.6.3 </b> "
+pre : " <b> 4.6.1 </b> "
 ---
 
 #### Overview
@@ -18,6 +18,5 @@ Execution Sequence:
 
 #### Content
 
-1. [Set up Route 53 for Name.com domain](4.7.3.1-acm-route53-cicd/)
-2. [Provision ACM certificate for domain](4.7.3.2-nameserver-domain-provider/)
-3. [Attach domain to Amplify](4.7.3.3-route53-dns-records/)
+1. [Set up Route 53 for Name.com domain](4.6.1.1-acm-route53-cicd/)
+2. [Provision ACM certificate for domain](4.6.1.2-nameserver-domain-provider/)

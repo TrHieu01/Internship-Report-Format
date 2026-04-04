@@ -3,7 +3,7 @@ title : "Provision ACM certificate for domain"
 date : 2024-01-01
 weight : 2
 chapter : false
-pre : " <b> 4.6.3.2 </b> "
+pre : " <b> 4.6.1.2 </b> "
 ---
 
 #### Content

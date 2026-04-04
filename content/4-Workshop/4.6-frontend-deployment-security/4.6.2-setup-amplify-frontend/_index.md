@@ -1,9 +1,9 @@
 ---
 title : "Frontend Deployment with Amplify"
 date : 2024-01-01
-weight : 1
+weight : 2
 chapter : false
-pre : " <b> 4.6.1 </b> "
+pre : " <b> 4.6.2 </b> "
 ---
 
 #### Objectives
@@ -24,6 +24,10 @@ AWS Amplify provides mechanisms for building, hosting, and publishing frontends 
 #### Custom Domain
 
 The configuration for custom domains and HTTPS is presented in detail in section 4.6.3 using the Name.com, Route 53, and ACM stack.
+
+1. In Amplify, select **Add domain** and choose the domain in Route 53.
+2. Amplify automatically creates CNAME/ALIAS records.
+3. Verify that HTTPS is working and that HTTP → HTTPS redirection is active.
 
 #### Build Configuration (amplify.yml)
 

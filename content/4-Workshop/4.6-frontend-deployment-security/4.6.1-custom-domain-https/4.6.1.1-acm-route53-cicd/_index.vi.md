@@ -3,7 +3,7 @@ title : "Thiết lập Route53 cho domain Name.com"
 date : 2024-01-01
 weight : 1
 chapter : false
-pre : " <b> 4.6.3.1 </b> "
+pre : " <b> 4.6.1.1 </b> "
 ---
 
 #### Nội dung
