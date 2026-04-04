@@ -14,7 +14,7 @@ EduTrust is an AI Camera-based learning support and exam supervision system depl
 
 Internet → Amplify → Application Load Balancer → EC2 Auto Scaling → Backend services
 
-![EduTrust Architecture](edutrust-architect.png)
+![Kiến trúc EduTrust](edutrust-architect.png)
 
 #### Main Components (by layer)
 

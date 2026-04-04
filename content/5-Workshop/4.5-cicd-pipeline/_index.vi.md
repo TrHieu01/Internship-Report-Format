@@ -15,10 +15,15 @@ Pipeline CI/CD của EduTrust được thiết kế theo mô hình chuẩn hoá 
 #### Cơ chế hoạt động (tổng quan)
 
 <div align="justify">
-Pipeline được kích hoạt khi có thay đổi được merge vào nhánh main hoặc khi được chạy thủ công (workflow_dispatch). Các job được sắp xếp theo thứ tự phụ thuộc để đảm bảo hạ tầng và artifact luôn đồng bộ:
+Pipeline được kích hoạt khi có thay đổi được merge vào nhánh main hoặc khi được chạy thủ công (workflow_dispatch). Pipeline được chia thành 2 phần:
+
+**CI (Continuous Integration):** phần kiểm tra, bao gồm định dạng, lint, test cơ bản để đảm bảo code đạt chuẩn trước khi build.
+
+**CD (Continuous Delivery/Deployment):** phần quan trọng nhất, gồm 4 job chạy theo thứ tự phụ thuộc để đảm bảo hạ tầng và artifact luôn đồng bộ.
 </div>
 
-- **Job CI:** kiểm tra định dạng, lint, test cơ bản để đảm bảo code đạt chuẩn trước khi build.
+![Quy trình CI/CD](cicd-image.png)
+
 - **Job Packer:** build image backend đã đóng gói sẵn ứng dụng và phụ thuộc.
 - **Job Terraform:** cập nhật hạ tầng theo Terraform (tạo mới, thay đổi hoặc huỷ theo plan).
 - **Job Build ECR:** build & push image Docker lên ECR để dùng cho ASG.
