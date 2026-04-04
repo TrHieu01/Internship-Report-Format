@@ -15,10 +15,15 @@ EduTrust's CI/CD pipeline is designed following a standardized model to ensure r
 #### How it Works (Overview)
 
 <div align="justify">
-The pipeline is triggered when changes are merged into the main branch or when run manually (workflow_dispatch). Jobs are arranged in dependency order to ensure that infrastructure and artifacts are always synchronized:
+The pipeline is triggered when changes are merged into the main branch or when run manually (workflow_dispatch). It is split into two parts:
+
+**CI (Continuous Integration):** the verification phase that checks formatting, linting, and basic tests to ensure code meets standards before building.
+
+**CD (Continuous Delivery/Deployment):** the most important phase, consisting of 4 jobs executed in dependency order to keep infrastructure and artifacts synchronized.
 </div>
 
-- **Job CI:** Checks formatting, linting, and basic tests to ensure code meets standards before building.
+![CI/CD Workflow](cicd-image.png)
+
 - **Job Packer:** Builds a backend image with the application and dependencies pre-packaged.
 - **Job Terraform:** Updates infrastructure according to Terraform (creating, changing, or destroying based on the plan).
 - **Job Build ECR:** Builds & pushes Docker images to ECR to be used for the ASG.

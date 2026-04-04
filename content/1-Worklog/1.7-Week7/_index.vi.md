@@ -1,7 +1,7 @@
 ---
-title: "Worklog Tuần 7"
-date: 2024-01-01
-weight: 1
+title: "Tuần 7: Hạ tầng & Tự động hóa"
+date: 2025-02-12
+weight: 7
 chapter: false
 pre: " <b> 1.7. </b> "
 ---
@@ -9,51 +9,23 @@ pre: " <b> 1.7. </b> "
 ⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
 {{% /notice %}}
 
-
 ### Mục tiêu tuần 7:
-
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Thiết lập hạ tầng mạng VPC/EC2 cho hệ thống EduTrust.
+* Triển khai hạ tầng dưới dạng mã (Infrastructure as Code - IaC).
+* Cấu hình cân bằng tải (Load Balancer) và bảo mật SSL/HTTPS.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
+| Thứ | Ngày | Công việc |
+| --- | --- | --- |
+| 2 | 16/02 | Khởi tạo VPC, Subnet và EC2 cho Backend EduTrust. |
+| 3 | 17/02 | Triển khai hạ tầng lên AWS bằng các kịch bản tự động (IaC). |
+| 4 | 18/02 | Cấu hình Application Load Balancer để điều phối lưu lượng. |
+| 5 | 19/02 | Tích hợp SSL (HTTPS) cho domain qua AWS Certificate Manager. |
+| 6 | 20/02 | Thực hiện Load Testing kiểm tra khả năng chịu tải của hạ tầng. |
+| 7 | 21/02 | Hoàn thiện tài liệu mô tả hạ tầng mạng (Security Groups). |
+| CN | 22/02 | Đánh giá hiệu năng và bảo mật mạng cơ bản. |
 
 ### Kết quả đạt được tuần 7:
-
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Hạ tầng mạng AWS được thiết lập bài bản theo mô hình chuẩn của đồ án.
+* Hệ thống đạt chuẩn bảo mật HTTPS, sẵn sàng cho người dùng truy cập.
+* Tự động hóa triển khai giúp quản lý tài nguyên linh hoạt hơn.

@@ -18,3 +18,4 @@ This section introduces the Terraform Job in EduTrust's CI/CD pipeline, which is
 4. [S3 Storage for Terraform State Files](4.5.3.4-s3-luu-tru-terraform-state/)
 5. [Terraform State Initialization & Import](4.5.3.5-khoi-tao-import-terraform-state/)
 6. [Infrastructure Deployment & Output Collection](4.5.3.6-trien-khai-ha-tang-thu-thap-outputs/)
+7. [Resources Created After Terraform Apply](4.5.3.7-tai-nguyen-duoc-tao/)

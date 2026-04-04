@@ -18,3 +18,4 @@ Phần này giới thiệu Job Terraform trong pipeline CI/CD của EduTrust, đ
 4. [S3 lưu trữ file Terraform State](4.5.3.4-s3-luu-tru-terraform-state/)
 5. [Khởi tạo & Import Terraform State](4.5.3.5-khoi-tao-import-terraform-state/)
 6. [Triển khai hạ tầng & Thu thập Outputs](4.5.3.6-trien-khai-ha-tang-thu-thap-outputs/)
+7. [Các tài nguyên được tạo sau khi chạy Terraform](4.5.3.7-tai-nguyen-duoc-tao/)
