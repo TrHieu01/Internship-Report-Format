@@ -8,15 +8,36 @@ pre : " <b> 4.6.1 </b> "
 
 #### Overview
 
-In this section, you configure a custom domain following the Name.com → Route 53 → ACM → Amplify flow to enable HTTPS and ensure secure access.
+In this section, you set up Route 53 for a domain purchased at a 3rd-party registrar (e.g. Name.com). This enables you to manage DNS records in Route 53 for later steps (including Amplify custom domain & HTTPS in section 4.6.2).
 
-Execution Sequence:
+#### Steps
 
-1. Set up Route 53 and update nameservers at Name.com.
-2. Provision ACM certificates using DNS validation.
-3. Attach the domain to Amplify and verify HTTPS.
+1. Create a Hosted Zone in Route 53 for your domain.
 
-#### Content
+   ![Route 53 hosted zones](create.png)
 
-1. [Set up Route 53 for Name.com domain](4.6.1.1-acm-route53-cicd/)
-2. [Provision ACM certificate for domain](4.6.1.2-nameserver-domain-provider/)
+   *In Route 53 → **Hosted zones**, choose **Create hosted zone**.*
+
+   ![Create hosted zone form](fill-info.png)
+
+   *Enter your domain name, keep **Type = Public hosted zone**, then choose **Create hosted zone**.*
+
+2. Get the Nameservers (NS) from the Hosted Zone.
+
+   ![Hosted zone NS records](ns.png)
+
+   *Open the Hosted Zone and copy the 4 NS values from the **NS** record.*
+
+3. Update Nameservers on your domain registrar (Name.com) to point to Route 53.
+
+   ![Name.com manage nameservers](domain.png)
+
+   *Paste the 4 NS values into **Manage Nameservers** on Name.com and save changes.*
+
+4. Confirm DNS propagation is complete.
+
+   You can verify using Route 53 **Test record** or via terminal:
+
+   ```bash
+   nslookup -type=ns <your-domain>
+   ```
